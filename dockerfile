@@ -22,7 +22,7 @@ WORKDIR iverilog
 RUN sh autoconf.sh && ./configure && make ${MAKEFLAGS} && make install ${MAKEFLAGS}
 
 ## install gtkwave
-RUN apt-get install gtkwave
+RUN apt-get install -y gtkwave
 
 
 
