@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  main:  # docker-compose run --rm main   or  docker exec -it main /bin/bash
+    build: .
+    # image: ubuntu:latest
+    volumes:
+      - "./work:/work"
+      - "/tmp/.X11-unix/:/tmp/.X11-unix"
+    environment: 
+      - DISPLAY
+    tty: true
+    stdin_open: true
