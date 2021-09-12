@@ -1,0 +1,7 @@
+*.out
+*.vcd
+/work/uvmprimer
+xvlog*.*
+xsim*.*
+xelab*.*
+webtalk*.*
