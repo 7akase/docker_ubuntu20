@@ -5,3 +5,6 @@ xvlog*.*
 xsim*.*
 xelab*.*
 webtalk*.*
+/work/book_*
+!/work/book_*/**/makefile
+!/work/book_*/**/*.md
