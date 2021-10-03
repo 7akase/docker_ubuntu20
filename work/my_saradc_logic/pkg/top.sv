@@ -17,7 +17,7 @@ saradc_logic DUT(
 initial begin
     uvm_config_db#(virtual saradc_logic_if)::set(
         null,
-        "*env0*",
+        "*agent0*",
         "vif",
         sif
     );

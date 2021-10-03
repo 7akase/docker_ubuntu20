@@ -31,7 +31,7 @@ xsim.dir/work/pkg.sdb: $(wildcard pkg/*.sv*)
 	xvlog $(OPTS_VIVADO) $(OPTS_JISSENUVM) -i pkg/ pkg/pkg.sv
 
 SDBS += xsim.dir/work/$(DUT).sdb
-xsim.dir/work/dut.sdb: $(wildcard dut/*.sv*)
+xsim.dir/work/$(DUT).sdb: $(wildcard dut/*.sv*)
 	xvlog $(OPTS_VIVADO) $(OPTS_JISSENUVM) -i dut/ dut/$(DUT).sv
 
 SDBS += xsim.dir/work/$(TOP_MODULE).sdb

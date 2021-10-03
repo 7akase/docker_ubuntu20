@@ -7,3 +7,5 @@
   CREATE_STREAM @0 {NAME:saradc_logic_sequence_test1 T:Transactions SCOPE:uvm_test_top.env0.agent0.sequencer STREAM:620}
   CREATE_STREAM @0 {NAME:saradc_logic_sequence_test1 T:Transactions SCOPE:uvm_test_top.env0.agent0.sequencer STREAM:620}
   CREATE_STREAM @0 {NAME:saradc_logic_sequence_test1 T:Transactions SCOPE:uvm_test_top.env0.agent0.sequencer STREAM:620}
+  CREATE_STREAM @0 {NAME:saradc_logic_sequence_test1 T:Transactions SCOPE:uvm_test_top.env0.agent0.sequencer STREAM:620}
+  CREATE_STREAM @0 {NAME:saradc_logic_sequence_test1 T:Transactions SCOPE:uvm_test_top.env0.agent0.sequencer STREAM:620}
