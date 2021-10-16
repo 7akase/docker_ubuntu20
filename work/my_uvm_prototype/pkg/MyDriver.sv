@@ -41,9 +41,9 @@ task MyDriver::run_phase(uvm_phase phase);
         //-----------------------------------------------
         vif.reset();
         vif.wdata <= req.wdata;
-        repeat(4) begin
+        for(int i=0; i<req.len; i++) begin
             @(negedge vif.clk) begin
-                vif.wdata <= ~vif.wdata;
+                vif.wdata <= req.wdata[i];
             end
         end
     	//-----------------------------------------------

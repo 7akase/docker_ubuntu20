@@ -7,6 +7,7 @@ import uvm_pkg::*;
 typedef virtual MyIf DRV_VIF;
 typedef virtual MyIf COL_VIF;
 
+`include "color.svh"
 `include "MyItem.sv"
 //`include "uvclib_driver_base.sv"
 `include "MyDriver.sv"

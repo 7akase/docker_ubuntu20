@@ -6,7 +6,7 @@ class MyTestSequence0001 extends MyTestSequenceBase;
     endfunction
 
     virtual task body();
-        repeat(num_data)
+        repeat(repeat_count)
             `uvm_do_with(req, {rstn == 1;})
     endtask
 endclass
