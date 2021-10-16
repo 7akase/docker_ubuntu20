@@ -1,0 +1,133 @@
+
+****** xsim v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.top/xsim_script.tcl
+# xsim {work.top} -testplusarg UVM_TESTNAME=MyTest0001 -testplusarg UVM_VERBOSITY=UVM_DEBUG -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+----------------------------------------------------------------
+(C) 2013-2014 NVIDIA Corporation
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2007-2014 Mentor Graphics Corporation
+
+
+----------------------------------------------------------------
+
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test MyTest0001...
+UVM_INFO pkg/MyTest0001.sv(10) @ 0: uvm_test_top [debug] uvm_test_top
+UVM_INFO pkg/MyEnv.sv(7) @ 0: uvm_test_top.env0 [env0] is created.
+UVM_INFO pkg/MyAgent.sv(13) @ 0: uvm_test_top.env0.agent0 [agent0] is created.
+UVM_INFO pkg/MySequencer.sv(6) @ 0: uvm_test_top.env0.agent0.sequencer [sequencer] is created.
+UVM_INFO pkg/MyDriver.sv(6) @ 0: uvm_test_top.env0.agent0.driver [driver] is created.
+UVM_INFO pkg/MyCollector.sv(6) @ 0: uvm_test_top.env0.agent0.collector [collector] is created.
+UVM_INFO pkg/MyMonitor.sv(6) @ 0: uvm_test_top.env0.agent0.monitor [monitor] is created.
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24213) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] Starting default sequence 'MyTestSequence0001' for phase 'run'
+UVM_INFO pkg/MyItem.sv(18) @ 0: reporter@@dut_response [dut_response] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 0: reporter@@req [req] is created.
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'pre_reset'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_reset' (id=185) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_reset'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'reset'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.reset' (id=194) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'reset'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'post_reset'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_reset' (id=203) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'post_reset'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'pre_configure'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_configure' (id=212) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_configure'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'configure'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.configure' (id=221) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'configure'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'post_configure'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_configure' (id=230) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'post_configure'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'pre_main'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_main' (id=239) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_main'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'main'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.main' (id=248) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'main'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'post_main'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_main' (id=257) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'post_main'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_shutdown' (id=266) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_shutdown'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'shutdown'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.shutdown' (id=275) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'shutdown'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+UVM_INFO pkg/MyItem.sv(18) @ 100000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 200000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 300000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 400000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 500000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 600000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 700000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 800000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 900000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 1000000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 1100000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 1200000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 1300000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 1400000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 1500000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 1600000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 1700000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 1800000: reporter@@req [req] is created.
+UVM_INFO pkg/MyItem.sv(18) @ 1900000: reporter@@req [req] is created.
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19948) @ 2000000: reporter [TEST_DONE] All end-of-test objections have been dropped. Calling stop tasks
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 2000000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15411) @ 2000000: reporter [PH/TRC/EXE/ALLDROP] Phase 'common.run' (id=160) PHASE EXIT ALL_DROPPED
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 2000000: reporter [PH_READY_TO_END] Phase 'common.run' (id=160) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 2000000: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_shutdown' (id=284) PHASE READY TO END
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 2000000: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'post_shutdown'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 2000000: uvm_test_top.env0.agent0.sequencer [PHASESEQ] No default sequence to kill for phase 'run'
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 2000000: reporter [UVM/REPORT/SERVER] [sequencer]     1
+[req]    20
+[monitor]     1
+[env0]     1
+[dut_response]     1
+[driver]     1
+[debug]     1
+[collector]     1
+[agent0]     1
+[UVM/RELNOTES]     1
+[UVM/COMP/NAMECHECK]     1
+[TEST_DONE]     2
+[RNTST]     1
+[PH_READY_TO_END]    13
+[PHASESEQ]    26
+[PH/TRC/EXE/ALLDROP]     1
+[NO_DPI_TSTNAME]     1
+** Report counts by id
+UVM_FATAL :    0
+UVM_ERROR :    0
+UVM_WARNING :    0
+UVM_INFO :   74
+** Report counts by severity
+
+--- UVM Report Summary ---
+
+
+$finish called at time : 2 us : File "/tools/Xilinx/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 16 15:09:30 2021...
