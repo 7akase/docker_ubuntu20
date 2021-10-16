@@ -4,7 +4,11 @@ module dut(
     input logic in,
     output logic [7:0] out
 );
-
-assign out[7:0] = {8{in}};
-
+    always @(posedge clk) begin
+        if(!rstn) begin
+            out[7:0] <= {0};
+        end else begin
+            out[7:0] <= {8{in}};
+        end
+    end
 endmodule

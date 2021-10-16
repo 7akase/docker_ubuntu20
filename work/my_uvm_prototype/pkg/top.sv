@@ -6,19 +6,19 @@ import uvm_pkg::*;
 import pkg::*;
 bit    clk;
 
-MyIf sif(clk);
+MyIf myIf(clk);
 dut DUT(
-        .clk            (sif.clk            ), 
-        .rstn           (sif.rstn           ),
-        .in             (sif.wdata          ),
-        .out            (sif.rdata          ));
+        .clk            (myIf.clk            ), 
+        .rstn           (myIf.rstn           ),
+        .in             (myIf.wdata          ),
+        .out            (myIf.rdata          ));
 
 initial begin
     uvm_config_db#(virtual MyIf)::set(
         null,
         "*env0*",
         "vif",
-        sif
+        myIf
     );
     run_test();
 end
@@ -28,6 +28,6 @@ initial begin
     $dumpvars;
 end
 
-initial forever #10 clk = ~clk;
+initial forever #5 clk = ~clk;
 
 endmodule

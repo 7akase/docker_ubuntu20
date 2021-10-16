@@ -13,9 +13,11 @@ class MyTestSequenceBase extends uvm_sequence#(MyItem);
     endfunction
 
     task pre_body();
+        // this.randomize();
         phase = get_starting_phase();
         if(phase != null)
-            phase.raise_objection(this, "MyTestSequenceBase");;
+            phase.raise_objection(this, "MyTestSequenceBase");
+        `uvm_info(get_full_name(), $sformatf("num_data is %d", num_data), UVM_DEBUG);
     endtask
 
     task post_body();

@@ -15,6 +15,6 @@ class MyItem extends uvm_sequence_item;
 
     function new(string name="MyItem");
         super.new(name);
-        `uvm_info(this.get_name(), "is created.", UVM_DEBUG)
+        `uvm_info(this.get_full_name(), "is created.", UVM_DEBUG)
     endfunction
 endclass
