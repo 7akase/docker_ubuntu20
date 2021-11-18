@@ -5,7 +5,7 @@
     ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source xsim.dir/work.top/xsim_script.tcl
-# xsim {work.top} -testplusarg UVM_TESTNAME=saradc_logic_test_0001 -autoloadwcfg -runall
+# xsim {work.top} -testplusarg UVM_VERBOSITY=UVM_MEDIUM -autoloadwcfg -runall
 Time resolution is 1 ps
 run -all
 UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
@@ -28,25 +28,27 @@ UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/s
 
 ----------------------------------------------------------------
 
-UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
-UVM_INFO @ 0: reporter [RNTST] Running test saradc_logic_test_0001...
+UVM_INFO @ 0: reporter [RNTST] Running test MyTest0001...
+UVM_INFO pkg/MyEnv.sv(7) @ 0: uvm_test_top.env0 [env0] is created.
 UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
-UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 1590000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 1590000: reporter [UVM/REPORT/SERVER] [UVM/RELNOTES]     1
+---------------------------------------------------------
+
+[1;34m[0minput:  
+
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 0: reporter [UVM/REPORT/SERVER] [env0]     1
+[UVM/RELNOTES]     1
 [UVM/COMP/NAMECHECK]     1
-[TEST_DONE]     1
 [RNTST]     1
-[NO_DPI_TSTNAME]     1
 ** Report counts by id
 UVM_FATAL :    0
 UVM_ERROR :    0
 UVM_WARNING :    0
-UVM_INFO :    5
+UVM_INFO :    4
 ** Report counts by severity
 
 --- UVM Report Summary ---
 
 
-$finish called at time : 1590 ns : File "/tools/Xilinx/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+$finish called at time : 0 fs : File "/tools/Xilinx/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
 exit
-INFO: [Common 17-206] Exiting xsim at Sun Oct  3 14:29:34 2021...
+INFO: [Common 17-206] Exiting xsim at Wed Nov 17 14:30:05 2021...

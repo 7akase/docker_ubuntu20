@@ -2,17 +2,20 @@
 class MyCollector extends uvm_component;
     `uvm_component_utils(MyCollector)
 
-    virtual MyIf                vif;    // overwritten by top module.
-    uvm_analysis_port #(MyItem) analysis_port;
+    virtual MyIf                           vif;    // overwritten by top module.
+    uvm_analysis_port #(MyItem)            analysis_port;
+    uvm_analysis_imp #(MyItem,MyCollector) from_driver;
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
         analysis_port = new("analysis_port",this);
+        from_driver = new("from_driver",this);
         `uvm_info(this.get_name(), "is created.", UVM_DEBUG)
     endfunction
 
     extern function void connect_phase(uvm_phase phase);
     extern task run_phase(uvm_phase phase);
+    extern function void write(MyItem item);
 endclass
 
 /**
@@ -44,9 +47,21 @@ task MyCollector::run_phase(uvm_phase phase);
         //-----------------------------------------------
         @vif.cb;
         rsp.rdata = vif.rdata;
+        rsp.t = $realtime();
         //-----------------------------------------------
         // RTL to TLM conversion (from here)
         //-----------------------------------------------
         analysis_port.write(rsp);
     end
 endtask
+
+/**
+ * Parameters:
+ *  item - MyItem
+ * Detail:
+ *  callback for analysis_port (uvm_analysis_port).
+*/
+function void MyCollector::write(MyItem item);
+    `uvm_info(this.get_full_name(), "received from ap.", UVM_DEBUG)
+
+endfunction

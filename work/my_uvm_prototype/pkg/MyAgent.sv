@@ -32,5 +32,6 @@ function void MyAgent::connect_phase(uvm_phase phase);
     if(is_active == UVM_ACTIVE) begin
         driver.seq_item_port.connect(sequencer.seq_item_export);
     end
-    collector.analysis_port.connect(monitor.analysis_export);
+    driver.analysis_port.connect(monitor.analysis_export_from_driver);
+    collector.analysis_port.connect(monitor.analysis_export_from_collector);
 endfunction

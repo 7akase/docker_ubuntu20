@@ -13,10 +13,12 @@ class MyTestSequenceBase extends uvm_sequence#(MyItem);
     endfunction
 
     task pre_body();
-        // this.randomize();
         phase = get_starting_phase();
         if(phase != null)
             phase.raise_objection(this, "MyTestSequenceBase");
+
+        this.randomize();
+
         `CBLUE
         `uvm_info(get_type_name(), $sformatf("repeat_count is %0d", repeat_count), UVM_DEBUG);
         `CEND

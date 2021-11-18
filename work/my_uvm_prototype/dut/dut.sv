@@ -6,7 +6,7 @@ module dut(
 );
     always @(posedge clk) begin
         if(!rstn) begin
-            out[7:0] <= {0};
+            out[7:0] <= {1'b0};
         end else begin
             out[7:0] <= {8{in}};
         end

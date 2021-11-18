@@ -1,0 +1,27 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sat Oct 16 08:18:02 2021
+[*]
+[dumpfile] "/DATA/home/yasu/work/docker/hello_systemverilog_docker/work/my_uvm_prototype/my_dump_file"
+[dumpfile_mtime] "Sat Oct 16 08:15:38 2021"
+[dumpfile_size] 5369
+[savefile] "/DATA/home/yasu/work/docker/hello_systemverilog_docker/work/my_uvm_prototype/waveconfig.gtkw"
+[timestart] 0
+[size] 1726 600
+[pos] -1 -1
+*-18.457998 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.myIf.
+[sst_width] 233
+[signals_width] 110
+[sst_expanded] 1
+[sst_vpaned_height] 144
+@28
+top.myIf.clk
+top.myIf.rstn
+@22
+top.myIf.rdata[7:0]
+@29
+top.myIf.wdata
+[pattern_trace] 1
+[pattern_trace] 0

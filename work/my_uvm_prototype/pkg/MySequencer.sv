@@ -5,5 +5,4 @@ class MySequencer extends uvm_sequencer#(MyItem);
         super.new(name, parent);
         `uvm_info(this.get_name(), "is created.", UVM_DEBUG)
     endfunction
-
 endclass

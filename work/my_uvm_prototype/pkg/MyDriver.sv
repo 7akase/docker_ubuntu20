@@ -1,10 +1,12 @@
 class MyDriver extends uvm_driver #(MyItem,MyItem);
     `uvm_component_utils(MyDriver)
 
-    virtual MyIf                vif;    // overwritten by top module.
-
+    virtual MyIf vif;    // overwritten by top module.
+    uvm_analysis_port #(MyItem) analysis_port;
+    
     function new(string name, uvm_component parent);
         super.new(name, parent);
+        analysis_port = new("analysis_port", this);
         `uvm_info(this.get_name(), "is created.", UVM_DEBUG)
     endfunction
 
@@ -35,6 +37,8 @@ endfunction
 task MyDriver::run_phase(uvm_phase phase);
     forever begin
         seq_item_port.get_next_item(req);
+        req.t = $realtime();
+        analysis_port.write(req);
 
     	//-----------------------------------------------
     	// TLM to RTL conversion (from here)

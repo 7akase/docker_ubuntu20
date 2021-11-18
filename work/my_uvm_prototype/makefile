@@ -18,7 +18,7 @@ SIMK       		= xsim.dir/work.$(TOP_MODULE)/xsimk  	# exists if xelab was done
 WDB        		= work.$(TOP_MODULE).wdb             	# exists if xsim was done
 
 UVM_TESTNAME   	= MyTest0001
-UVM_VERBOSITY	= UVM_DEBUG 	# NONE, LOW, MEDIUM, HIGH, FULL, DEBUG
+UVM_VERBOSITY	= UVM_MEDIUM 	# NONE, LOW, MEDIUM, HIGH, FULL, DEBUG
 
 # =======================================================
 all: compile elaborate test  ## all
@@ -58,7 +58,7 @@ $(addsuffix .log,$(UVM_TESTNAME)): $(SIMK)
 		-testplusarg UVM_VERBOSITY=$(UVM_VERBOSITY)\
 	|tee $@
 
-test: $(addsuffix .log,$(UVM_TESTNAME)) ## run test using xsim
+test: $(addsuffix .log,$(UVM_TESTNAME))## run test using xsim
 # ex. make test UVM_TESTNAME=MyTest0001
 
 # =======================================================
@@ -68,4 +68,11 @@ clean:
 	rm -f $(OUTFILE) $(VCD)
 	rm -rf ./xsim.dir
 	rm -f webtalk* xelab* xsim* xvlog* *.wdb
+
+# =======================================================
+# documentation
+# =======================================================
+doc: 
+	mono /tools/Natural\ Docs/NaturalDocs.exe -i ./pkg -o FramedHtml ./doc/html -p config --rebuild
+
 	

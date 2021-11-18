@@ -1,0 +1,685 @@
+
+****** xsim v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.top/xsim_script.tcl
+# xsim {work.top} -testplusarg UVM_TESTNAME=MyTest0001 -testplusarg UVM_VERBOSITY=UVM_MEDIUM -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+----------------------------------------------------------------
+(C) 2013-2014 NVIDIA Corporation
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2007-2014 Mentor Graphics Corporation
+
+
+----------------------------------------------------------------
+
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test MyTest0001...
+UVM_INFO pkg/MyEnv.sv(7) @ 0: uvm_test_top.env0 [env0] is created.
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+---------------------------------------------------------
+
+[1;34m[0m---------------------------------------------------------
+
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 550000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+input:  stimulus: ---------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                   
+---------------------------------------------------------------------------------------
+req                            MyItem    -     @656                                    
+  t                            real      64    0.000000                                
+  rstn                         integral  1     'h1                                     
+  wdata                        integral  16    'ha04                                   
+  rdata                        integral  8     'h57                                    
+  begin_time                   time      64    0                                       
+  depth                        int       32    'd2                                     
+  parent sequence (name)       string    5     test1                                   
+  parent sequence (full name)  string    40    uvm_test_top.env0.agent0.sequencer.test1
+  sequencer                    string    34    uvm_test_top.env0.agent0.sequencer      
+---------------------------------------------------------------------------------------
+
+response: --------------------------------------
+Name          Type      Size  Value   
+--------------------------------------
+dut_response  MyItem    -     @652    
+  t           real      64    5.000000
+  rstn        integral  1     'hX     
+  wdata       integral  16    'hxxxx  
+  rdata       integral  8     'hxx    
+--------------------------------------
+
+response: ---------------------------------------
+Name          Type      Size  Value    
+---------------------------------------
+dut_response  MyItem    -     @652     
+  t           real      64    15.000000
+  rstn        integral  1     'hX      
+  wdata       integral  16    'hxxxx   
+  rdata       integral  8     'h0      
+---------------------------------------
+
+response: ---------------------------------------
+Name          Type      Size  Value    
+---------------------------------------
+dut_response  MyItem    -     @652     
+  t           real      64    25.000000
+  rstn        integral  1     'hX      
+  wdata       integral  16    'hxxxx   
+  rdata       integral  8     'h0      
+---------------------------------------
+
+response: ---------------------------------------
+Name          Type      Size  Value    
+---------------------------------------
+dut_response  MyItem    -     @652     
+  t           real      64    35.000000
+  rstn        integral  1     'hX      
+  wdata       integral  16    'hxxxx   
+  rdata       integral  8     'h0      
+---------------------------------------
+
+response: ---------------------------------------
+Name          Type      Size  Value    
+---------------------------------------
+dut_response  MyItem    -     @652     
+  t           real      64    45.000000
+  rstn        integral  1     'hX      
+  wdata       integral  16    'hxxxx   
+  rdata       integral  8     'h0      
+---------------------------------------
+
+response: ---------------------------------------
+Name          Type      Size  Value    
+---------------------------------------
+dut_response  MyItem    -     @652     
+  t           real      64    55.000000
+  rstn        integral  1     'hX      
+  wdata       integral  16    'hxxxx   
+  rdata       integral  8     'h0      
+---------------------------------------
+
+response: ---------------------------------------
+Name          Type      Size  Value    
+---------------------------------------
+dut_response  MyItem    -     @652     
+  t           real      64    65.000000
+  rstn        integral  1     'hX      
+  wdata       integral  16    'hxxxx   
+  rdata       integral  8     'hff     
+---------------------------------------
+
+response: ---------------------------------------
+Name          Type      Size  Value    
+---------------------------------------
+dut_response  MyItem    -     @652     
+  t           real      64    75.000000
+  rstn        integral  1     'hX      
+  wdata       integral  16    'hxxxx   
+  rdata       integral  8     'h0      
+---------------------------------------
+
+response: ---------------------------------------
+Name          Type      Size  Value    
+---------------------------------------
+dut_response  MyItem    -     @652     
+  t           real      64    85.000000
+  rstn        integral  1     'hX      
+  wdata       integral  16    'hxxxx   
+  rdata       integral  8     'h0      
+---------------------------------------
+
+response: ---------------------------------------
+Name          Type      Size  Value    
+---------------------------------------
+dut_response  MyItem    -     @652     
+  t           real      64    95.000000
+  rstn        integral  1     'hX      
+  wdata       integral  16    'hxxxx   
+  rdata       integral  8     'h0      
+---------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    105.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    115.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    125.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    135.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+stimulus: ---------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                   
+---------------------------------------------------------------------------------------
+req                            MyItem    -     @686                                    
+  t                            real      64    140.000000                              
+  rstn                         integral  1     'h1                                     
+  wdata                        integral  16    'haa68                                  
+  rdata                        integral  8     'hf8                                    
+  begin_time                   time      64    140000                                  
+  depth                        int       32    'd2                                     
+  parent sequence (name)       string    5     test1                                   
+  parent sequence (full name)  string    40    uvm_test_top.env0.agent0.sequencer.test1
+  sequencer                    string    34    uvm_test_top.env0.agent0.sequencer      
+---------------------------------------------------------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    145.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    155.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    165.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    175.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    185.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    195.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    205.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    215.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    225.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    235.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    245.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    255.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    265.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    275.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    285.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    295.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+stimulus: ---------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                   
+---------------------------------------------------------------------------------------
+req                            MyItem    -     @690                                    
+  t                            real      64    300.000000                              
+  rstn                         integral  1     'h1                                     
+  wdata                        integral  16    'h21e2                                  
+  rdata                        integral  8     'h9                                     
+  begin_time                   time      64    300000                                  
+  depth                        int       32    'd2                                     
+  parent sequence (name)       string    5     test1                                   
+  parent sequence (full name)  string    40    uvm_test_top.env0.agent0.sequencer.test1
+  sequencer                    string    34    uvm_test_top.env0.agent0.sequencer      
+---------------------------------------------------------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    305.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    315.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    325.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    335.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    345.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    355.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    365.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    375.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    385.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    395.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+stimulus: ---------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                   
+---------------------------------------------------------------------------------------
+req                            MyItem    -     @694                                    
+  t                            real      64    400.000000                              
+  rstn                         integral  1     'h1                                     
+  wdata                        integral  16    'h33bc                                  
+  rdata                        integral  8     'hca                                    
+  begin_time                   time      64    400000                                  
+  depth                        int       32    'd2                                     
+  parent sequence (name)       string    5     test1                                   
+  parent sequence (full name)  string    40    uvm_test_top.env0.agent0.sequencer.test1
+  sequencer                    string    34    uvm_test_top.env0.agent0.sequencer      
+---------------------------------------------------------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    405.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    415.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    425.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    435.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    445.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    455.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    465.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    475.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    485.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+stimulus: ---------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                   
+---------------------------------------------------------------------------------------
+req                            MyItem    -     @698                                    
+  t                            real      64    490.000000                              
+  rstn                         integral  1     'h1                                     
+  wdata                        integral  16    'hfa90                                  
+  rdata                        integral  8     'h91                                    
+  begin_time                   time      64    490000                                  
+  depth                        int       32    'd2                                     
+  parent sequence (name)       string    5     test1                                   
+  parent sequence (full name)  string    40    uvm_test_top.env0.agent0.sequencer.test1
+  sequencer                    string    34    uvm_test_top.env0.agent0.sequencer      
+---------------------------------------------------------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    495.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'hff      
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    505.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    515.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    525.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    535.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  MyItem    -     @652      
+  t           real      64    545.000000
+  rstn        integral  1     'hX       
+  wdata       integral  16    'hxxxx    
+  rdata       integral  8     'h0       
+----------------------------------------
+
+
+
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 550000: reporter [UVM/REPORT/SERVER] [env0]     1
+[UVM/RELNOTES]     1
+[UVM/COMP/NAMECHECK]     1
+[TEST_DONE]     1
+[RNTST]     1
+[NO_DPI_TSTNAME]     1
+** Report counts by id
+UVM_FATAL :    0
+UVM_ERROR :    0
+UVM_WARNING :    0
+UVM_INFO :    6
+** Report counts by severity
+
+--- UVM Report Summary ---
+
+
+$finish called at time : 550 ns : File "/tools/Xilinx/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Nov 17 19:02:03 2021...
