@@ -1,0 +1,159 @@
+
+****** xsim v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.top/xsim_script.tcl
+# xsim {work.top} -testplusarg UVM_TESTNAME=MyTest0001 -testplusarg UVM_VERBOSITY=UVM_MEDIUM -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+----------------------------------------------------------------
+(C) 2013-2014 NVIDIA Corporation
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2007-2014 Mentor Graphics Corporation
+
+
+----------------------------------------------------------------
+
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test MyTest0001...
+UVM_INFO pkg/MyEnv.sv(7) @ 0: uvm_test_top.env0 [env0] is created.
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+---------------------------------------------------------
+
+[1;34m[0mtime 30.000000, APB transaction start.
+[1;31mtime 65.000000, APB transaction done.
+[0mtime 80.000000, APB transaction start.
+[1;31mtime 115.000000, APB transaction done.
+[0mtime 130.000000, APB transaction start.
+[1;31mtime 165.000000, APB transaction done.
+[0mtime 180.000000, APB transaction start.
+[1;31mtime 215.000000, APB transaction done.
+[0mtime 230.000000, APB transaction start.
+[1;31mtime 265.000000, APB transaction done.
+[0m---------------------------------------------------------
+
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 280000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+input:  stimulus: ---------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                   
+---------------------------------------------------------------------------------------
+req                            ApbItem   -     @656                                    
+  t                            real      64    0.000000                                
+  rstn                         integral  1     'h1                                     
+  paddr                        integral  32    'h599a7820                              
+  slave_id                     integral  32    'h1                                     
+  pwrite                       integral  1     'h0                                     
+  pwdata                       integral  32    'hddc12a57                              
+  prdata                       integral  32    'he3825828                              
+  pslverr                      integral  1     'h0                                     
+  begin_time                   time      64    0                                       
+  depth                        int       32    'd2                                     
+  parent sequence (name)       string    5     test1                                   
+  parent sequence (full name)  string    40    uvm_test_top.env0.agent0.sequencer.test1
+  sequencer                    string    34    uvm_test_top.env0.agent0.sequencer      
+---------------------------------------------------------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  ApbItem   -     @652      
+  t           real      64    65.000000 
+  rstn        integral  1     'hX       
+  paddr       integral  32    'h599a7820
+  slave_id    integral  32    'h2       
+  pwrite      integral  1     'h0       
+  pwdata      integral  32    'ha5a5a5a5
+  prdata      integral  32    'hcafe0123
+  pslverr     integral  1     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  ApbItem   -     @652      
+  t           real      64    115.000000
+  rstn        integral  1     'hX       
+  paddr       integral  32    'h599a7820
+  slave_id    integral  32    'h2       
+  pwrite      integral  1     'h0       
+  pwdata      integral  32    'ha5a5a5a5
+  prdata      integral  32    'hcafe0123
+  pslverr     integral  1     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  ApbItem   -     @652      
+  t           real      64    165.000000
+  rstn        integral  1     'hX       
+  paddr       integral  32    'h599a7820
+  slave_id    integral  32    'h2       
+  pwrite      integral  1     'h0       
+  pwdata      integral  32    'ha5a5a5a5
+  prdata      integral  32    'hcafe0123
+  pslverr     integral  1     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  ApbItem   -     @652      
+  t           real      64    215.000000
+  rstn        integral  1     'hX       
+  paddr       integral  32    'h599a7820
+  slave_id    integral  32    'h2       
+  pwrite      integral  1     'h0       
+  pwdata      integral  32    'ha5a5a5a5
+  prdata      integral  32    'hcafe0123
+  pslverr     integral  1     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  ApbItem   -     @652      
+  t           real      64    265.000000
+  rstn        integral  1     'hX       
+  paddr       integral  32    'h599a7820
+  slave_id    integral  32    'h2       
+  pwrite      integral  1     'h0       
+  pwdata      integral  32    'ha5a5a5a5
+  prdata      integral  32    'hcafe0123
+  pslverr     integral  1     'h0       
+----------------------------------------
+
+
+
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 280000: reporter [UVM/REPORT/SERVER] [env0]     1
+[UVM/RELNOTES]     1
+[UVM/COMP/NAMECHECK]     1
+[TEST_DONE]     1
+[RNTST]     1
+[NO_DPI_TSTNAME]     1
+** Report counts by id
+UVM_FATAL :    0
+UVM_ERROR :    0
+UVM_WARNING :    0
+UVM_INFO :    6
+** Report counts by severity
+
+--- UVM Report Summary ---
+
+
+$finish called at time : 280 ns : File "/tools/Xilinx/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Nov 18 20:48:25 2021...
