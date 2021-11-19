@@ -17,7 +17,7 @@ end
 assign apbIf.PREADY = pready_d[3];
 
 ApbIf apbIf(clk);
-SpiIf spiIf;
+SpiIf spiIf();
 
 dut DUT(apbIf, spiIf);
 
@@ -37,6 +37,6 @@ initial begin
 end
 
 initial forever #5 clk = ~clk;
-initial #1000 $stop();
+initial #100000 $stop();
 
 endmodule

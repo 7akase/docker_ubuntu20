@@ -35,23 +35,21 @@ endfunction
  *  Get next transaction (TLM) and pass it to DUT (RTL) through interface.
 */
 task ApbDriver::run_phase(uvm_phase phase);
+    vif.reset();
+
     forever begin
         seq_item_port.get_next_item(req);
         req.t = $realtime();
         analysis_port.write(req);
 
-    	//-----------------------------------------------
-    	// TLM to RTL conversion (from here)
-        //-----------------------------------------------
-        vif.reset();
-        for(int i=0; i<1; i++) begin
-            $display($sformatf("time %f, APB transaction start. %b", $realtime, req.pwrite));
-            vif.write(req.slave_id, req.paddr, req.pwdata, req.pslverr);
-            vif.read(req.slave_id, req.paddr, req.prdata, req.pslverr);
-        end
-    	//-----------------------------------------------
-    	// TLM to RTL conversion (to here)
-        //-----------------------------------------------
-        seq_item_port.item_done();
+    	//-----------------------------------------------(from here)
+    	// TLM to RTL conversion
+        $display($sformatf("time %f, APB transaction start. %b", $realtime, req.pwrite));
+        vif.write(req.slave_id, req.paddr, req.pwdata, req.pslverr);
+        vif.read(req.slave_id, req.paddr, req.prdata, req.pslverr);
+        #1000;
+
+        //-----------------------------------------------(to here)
+    	seq_item_port.item_done();
 	end
 endtask

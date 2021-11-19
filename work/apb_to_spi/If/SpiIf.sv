@@ -1,5 +1,6 @@
 interface SpiIf #(CPOL=0, CPHA=0, SLAVES=1);
     logic [SLAVES-1:0] SS;
+    logic              SCLK;
     logic              MISO;
     logic              MOSI;
 

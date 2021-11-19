@@ -1,27 +1,50 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Sat Oct 16 08:18:02 2021
+[*] Fri Nov 19 12:27:00 2021
 [*]
-[dumpfile] "/DATA/home/yasu/work/docker/hello_systemverilog_docker/work/my_uvm_prototype/my_dump_file"
-[dumpfile_mtime] "Sat Oct 16 08:15:38 2021"
-[dumpfile_size] 5369
-[savefile] "/DATA/home/yasu/work/docker/hello_systemverilog_docker/work/my_uvm_prototype/waveconfig.gtkw"
+[dumpfile] "/DATA/home/yasu/work/docker/hello_systemverilog_docker/work/apb_to_spi/my_dump_file"
+[dumpfile_mtime] "Fri Nov 19 12:26:08 2021"
+[dumpfile_size] 28646
+[savefile] "/DATA/home/yasu/work/docker/hello_systemverilog_docker/work/apb_to_spi/waveconfig.gtkw"
 [timestart] 0
-[size] 1726 600
+[size] 1555 600
 [pos] -1 -1
-*-18.457998 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-17.650694 746000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
-[treeopen] top.myIf.
 [sst_width] 233
-[signals_width] 110
+[signals_width] 198
 [sst_expanded] 1
 [sst_vpaned_height] 144
 @28
-top.myIf.clk
-top.myIf.rstn
+top.apbIf.PRESETn
+top.apbIf.PCLK
 @22
-top.myIf.rdata[7:0]
+top.apbIf.PADDR[31:0]
+@28
+top.apbIf.PSELx[1:0]
+top.apbIf.PWRITE
+@22
+top.apbIf.PWDATA[31:0]
+@28
+top.apbIf.PENABLE
+top.apbIf.PREADY
+@22
+top.apbIf.PRDATA[31:0]
+@28
+top.apbIf.PSLVERR
+@22
+top.DUT.spi_state[3:0]
+@28
+top.DUT.spi_wdata_updated
+@22
+top.DUT.spi_sclk_count[5:0]
+@200
+-
 @29
-top.myIf.wdata
+top.spiIf.SCLK
+@28
+top.spiIf.SS[0]
+top.spiIf.MOSI
+top.spiIf.MISO
 [pattern_trace] 1
 [pattern_trace] 0

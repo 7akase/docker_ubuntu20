@@ -35,11 +35,158 @@ UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/s
 ---------------------------------------------------------
 
 [1;34mUVM_INFO pkg/ApbTestSequenceBase.sv(24) @ 0: uvm_test_top.env0.agent0.sequencer@@test1 [ApbTestSequence0001] repeat_count is 2
-[0mtime 30.000000, APB transaction start. 0
+[0mtime 30.000000, APB transaction start. 1
 [1;31mtime 45.000000, APB transaction done.
-[0m[1;31mtime 85.000000, APB transaction done.
 [0m[1;31mtime 95.000000, APB transaction done.
-[0mtime 140.000000, APB transaction start. 1
-$stop called at time : 1 us : File "/DATA/home/yasu/work/docker/hello_systemverilog_docker/work/apb_to_spi/pkg/top.sv" Line 45
+[0m[1;31mtime 105.000000, APB transaction done.
+[0mtime 1120.000000, APB transaction start. 0
+[1;31mtime 1135.000000, APB transaction done.
+[0m[1;31mtime 1185.000000, APB transaction done.
+[0m[1;31mtime 1195.000000, APB transaction done.
+[0m---------------------------------------------------------
+
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 2210000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+input:  stimulus: ---------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                   
+---------------------------------------------------------------------------------------
+req                            ApbItem   -     @658                                    
+  t                            real      64    30.000000                               
+  rstn                         integral  1     'h1                                     
+  paddr                        integral  32    'hf82ec                                 
+  slave_id                     integral  32    'h1                                     
+  pwrite                       integral  1     'h1                                     
+  pwdata                       integral  32    'hacf724ff                              
+  prdata                       integral  32    'h1e64b5e6                              
+  pslverr                      integral  1     'h0                                     
+  begin_time                   time      64    30000                                   
+  depth                        int       32    'd2                                     
+  parent sequence (name)       string    5     test1                                   
+  parent sequence (full name)  string    40    uvm_test_top.env0.agent0.sequencer.test1
+  sequencer                    string    34    uvm_test_top.env0.agent0.sequencer      
+---------------------------------------------------------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  ApbItem   -     @652      
+  t           real      64    45.000000 
+  rstn        integral  1     'hX       
+  paddr       integral  32    'hf82ec   
+  slave_id    integral  32    'h2       
+  pwrite      integral  1     'h1       
+  pwdata      integral  32    'hacf724ff
+  prdata      integral  32    'h0       
+  pslverr     integral  1     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  ApbItem   -     @652      
+  t           real      64    95.000000 
+  rstn        integral  1     'hX       
+  paddr       integral  32    'hf82ec   
+  slave_id    integral  32    'h2       
+  pwrite      integral  1     'h0       
+  pwdata      integral  32    'hacf724ff
+  prdata      integral  32    'hcafe0123
+  pslverr     integral  1     'h0       
+----------------------------------------
+
+response: ----------------------------------------
+Name          Type      Size  Value     
+----------------------------------------
+dut_response  ApbItem   -     @652      
+  t           real      64    105.000000
+  rstn        integral  1     'hX       
+  paddr       integral  32    'hf82ec   
+  slave_id    integral  32    'h2       
+  pwrite      integral  1     'h0       
+  pwdata      integral  32    'hacf724ff
+  prdata      integral  32    'hcafe0123
+  pslverr     integral  1     'h0       
+----------------------------------------
+
+stimulus: ---------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                   
+---------------------------------------------------------------------------------------
+req                            ApbItem   -     @688                                    
+  t                            real      64    1120.000000                             
+  rstn                         integral  1     'h1                                     
+  paddr                        integral  32    'h1396ba24                              
+  slave_id                     integral  32    'h1                                     
+  pwrite                       integral  1     'h0                                     
+  pwdata                       integral  32    'hd314c313                              
+  prdata                       integral  32    'hdc3a2c97                              
+  pslverr                      integral  1     'h0                                     
+  begin_time                   time      64    1120000                                 
+  depth                        int       32    'd2                                     
+  parent sequence (name)       string    5     test1                                   
+  parent sequence (full name)  string    40    uvm_test_top.env0.agent0.sequencer.test1
+  sequencer                    string    34    uvm_test_top.env0.agent0.sequencer      
+---------------------------------------------------------------------------------------
+
+response: -----------------------------------------
+Name          Type      Size  Value      
+-----------------------------------------
+dut_response  ApbItem   -     @652       
+  t           real      64    1135.000000
+  rstn        integral  1     'hX        
+  paddr       integral  32    'h1396ba24 
+  slave_id    integral  32    'h2        
+  pwrite      integral  1     'h1        
+  pwdata      integral  32    'hd314c313 
+  prdata      integral  32    'h0        
+  pslverr     integral  1     'h0        
+-----------------------------------------
+
+response: -----------------------------------------
+Name          Type      Size  Value      
+-----------------------------------------
+dut_response  ApbItem   -     @652       
+  t           real      64    1185.000000
+  rstn        integral  1     'hX        
+  paddr       integral  32    'h1396ba24 
+  slave_id    integral  32    'h2        
+  pwrite      integral  1     'h0        
+  pwdata      integral  32    'hd314c313 
+  prdata      integral  32    'hcafe0123 
+  pslverr     integral  1     'h0        
+-----------------------------------------
+
+response: -----------------------------------------
+Name          Type      Size  Value      
+-----------------------------------------
+dut_response  ApbItem   -     @652       
+  t           real      64    1195.000000
+  rstn        integral  1     'hX        
+  paddr       integral  32    'h1396ba24 
+  slave_id    integral  32    'h2        
+  pwrite      integral  1     'h0        
+  pwdata      integral  32    'hd314c313 
+  prdata      integral  32    'hcafe0123 
+  pslverr     integral  1     'h0        
+-----------------------------------------
+
+
+
+UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 2210000: reporter [UVM/REPORT/SERVER] [env0]     1
+[UVM/RELNOTES]     1
+[UVM/COMP/NAMECHECK]     1
+[TEST_DONE]     1
+[RNTST]     1
+[NO_DPI_TSTNAME]     1
+[ApbTestSequence0001]     1
+** Report counts by id
+UVM_FATAL :    0
+UVM_ERROR :    0
+UVM_WARNING :    0
+UVM_INFO :    7
+** Report counts by severity
+
+--- UVM Report Summary ---
+
+
+$finish called at time : 2210 ns : File "/tools/Xilinx/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
 exit
-INFO: [Common 17-206] Exiting xsim at Fri Nov 19 18:55:46 2021...
+INFO: [Common 17-206] Exiting xsim at Fri Nov 19 21:26:08 2021...

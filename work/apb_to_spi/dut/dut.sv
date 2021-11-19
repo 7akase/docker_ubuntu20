@@ -132,7 +132,7 @@ module dut(
         if(!apb.PRESETn || !selected) begin
             apb.PREADY <= 1'b0;
         end else begin
-            if((!apb.PWRITE && prdata_prepared) ||
+            if((!apb.PWRITE && prdata_valid) ||
                ( apb.PWRITE && pwdata_fetch_done)) begin
                 apb.PREADY <= 1'b1;
             end
@@ -163,76 +163,69 @@ module dut(
                   (apb.PWRITE && pwdata_fetch_done);
 
     // ----------------------------------------------------
-    // spi.SCLK (output)
-    logic spi_sclk_int;
-    assign spi_sclk_int = (CPHA | !SS) & (CPOL ^ CPHA ^ !apb.PCLK);
+    // spi State Machine
+    logic CPOL;
+    logic CPHA;
+    assign CPOL = 1'b0;
+    assign CPHA = 1'b0;
 
-    // ----------------------------------------------------
-    // spi.SS (output)
     logic spi_wdata_updated;
+    logic [5:0] spi_sclk_count;
+
+    typedef enum logic [3:0] {SPI_RESET, SPI_SS0, SPI_MOSI, SPI_MOSI_SCLK, SPI_MISO_SCLK, SPI_SS1} spi_state_t;
+    spi_state_t spi_state;
     always_ff @(posedge apb.PCLK) begin
         if(!apb.PRESETn) begin
-            spi.SS[0] <= 1'b1;
+            spi_state <= SPI_RESET;
         end else begin
-            spi.SS[0] <= !spi_wdata_updated;
-        end
-    end
-
-    logic [4:0] spi_sclk_count;
-    always_ff @(negedge apb.PCLK) begin
-        if(!apb.PRESETn || spi.SS[0]) begin
-            spi_sclk_count <= 5'd1;
-        end else begin
-            if(spi_sclk_count < 5'd16) begin
-                spi_sclk_count <= spi_sclk_count + 5'd1;
-            end else begin
-                spi_sclk_count <= 5'd16;
-            end
+            case(spi_state)
+            SPI_RESET       : spi_state <= spi_wdata_updated ? SPI_SS0 : SPI_RESET;
+            SPI_SS0         : spi_state <= CPHA == 1'b0 ? SPI_MOSI : SPI_MOSI_SCLK; 
+            SPI_MOSI        : spi_state <= SPI_MISO_SCLK;
+            SPI_MOSI_SCLK   : spi_state <= SPI_MISO_SCLK;
+            SPI_MISO_SCLK   : spi_state <= spi_sclk_count < 16 ? SPI_MOSI_SCLK : SPI_SS1;
+            SPI_SS1         : spi_state <= SPI_RESET;
+            endcase
         end
     end
 
     // ----------------------------------------------------
+    // spi.SCLK (output)
+    // spi.SS   (output)
     // spi.MOSI (output)
-    logic [15:0] spi_wdata;  // This register holds data to SPI slave when SS is asserterd.
-    always_ff @(posedge apb.PCLK) begin
-        if(spi.SS[0]) begin  // fetch send data and prepare for first bit of MOSI.
-            spi.MOSI          <= pwdata_fetch_value[15];
-            spi_wdata         <= {pwdata_fetch_value[15:8], pwdata_fetch_value[7:0]};
-            spi_wdata_updated <= 1'b1;
-        end else begin
-            if(spi_sclk_count < 5'd16) begin
-                spi.MOSI          <= spi_wdata[15];
-                spi_wdata         <= spi_wdata << 1;
-                spi_wdata_updated <= 1'b1;
-            end else begin
-                spi.MOSI          <= 1'b0;
-                spi_wdata_updated <= 1'b0;
-            end
-        end
-    end
-
-    // ----------------------------------------------------
     // spi.MISO (input)
-    logic [7:0] spi_rdata;
+    logic [15:0] spi_wdata;
+    logic [15:0] spi_rdata;
     always_ff @(posedge apb.PCLK) begin
-        if(spi.SS[0]) begin
-            spi_rdata <= 8'h00;
-        end
-        if(spi_sclk_count >= 5'd8 && spi_sclk_count < 5'd16) begin
-            spi_rdata <= {spi_rdata[6:0], spi.MOSI};
-        end
-    end
-
-    // ----------------------------------------------------
-    // spi_err (output)
-    logic spi_err;
-    always_ff @(posedge apb.PCLK) begin
-        if(spi.SS[0]) begin
-            spi_err <= 1'b0;
-        end else begin
-            if(spi_sclk_count > 7) begin
-                spi_err <= 1'b1;
-            end
-        end
+        case(spi_state)
+        SPI_RESET       : begin
+                            spi.SCLK <= CPOL;
+                            spi.SS   <= 1'b1;
+                            spi_wdata <= pwdata_fetch_value;
+                            spi_wdata_updated <= pwdata_fetch_done;
+                            spi_rdata <= {1'b0};
+                            spi_sclk_count <= 0;
+                          end
+        SPI_SS0         : begin
+                            spi.SS   <= 1'b0;
+                          end
+        SPI_MOSI        : begin
+                            spi.MOSI <= spi_wdata[15-spi_sclk_count];
+                            spi_sclk_count <= spi_sclk_count + 1;
+                          end
+        SPI_MOSI_SCLK   : begin
+                            spi.MOSI <= spi_wdata[15-spi_sclk_count];
+                            spi_sclk_count <= spi_sclk_count + 1;
+                            spi.SCLK <= !spi.SCLK;
+                          end
+        SPI_MISO_SCLK   : begin
+                            spi_rdata[15-spi_sclk_count] <= spi.MISO;
+                            spi.SCLK <= !spi.SCLK;
+                          end
+        SPI_SS1         : begin
+                            spi.SS   <= 1'b1;
+                            spi_wdata_updated <= 1'b0;
+                          end
+        endcase
     end
 endmodule
