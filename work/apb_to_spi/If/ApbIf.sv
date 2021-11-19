@@ -10,10 +10,12 @@ interface ApbIf(input bit PCLK);
     logic        PSLVERR;
 
     modport master(
+        input  PCLK,
         output PRESETn, PADDR, PSELx, PENABLE, PWRITE, PWDATA,
         input  PREADY, PRDATA, PSLVERR
     );
     modport slave(
+        input  PCLK,
         input  PRESETn, PADDR, PSELx, PENABLE, PWRITE, PWDATA,
         output PREADY, PRDATA, PSLVERR
     );
@@ -44,7 +46,7 @@ interface ApbIf(input bit PCLK);
         @(negedge PCLK);
         PENABLE = 1'b1;
         @(negedge PCLK);
-        while(PREADY != 1'b0) begin
+        while(PREADY == 1'b0) begin
             @(negedge PCLK);
         end
         err = PSLVERR;

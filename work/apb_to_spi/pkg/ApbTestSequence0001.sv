@@ -6,7 +6,8 @@ class ApbTestSequence0001 extends ApbTestSequenceBase;
     endfunction
 
     virtual task body();
-        repeat(repeat_count)
+        repeat(repeat_count) begin
             `uvm_do_with(req, {rstn == 1;})
+        end
     endtask
 endclass

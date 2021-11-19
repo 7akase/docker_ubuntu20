@@ -44,8 +44,9 @@ task ApbDriver::run_phase(uvm_phase phase);
     	// TLM to RTL conversion (from here)
         //-----------------------------------------------
         vif.reset();
-        for(int i=0; i<5; i++) begin
-            $display($sformatf("time %f, APB transaction start.", $realtime));
+        for(int i=0; i<1; i++) begin
+            $display($sformatf("time %f, APB transaction start. %b", $realtime, req.pwrite));
+            vif.write(req.slave_id, req.paddr, req.pwdata, req.pslverr);
             vif.read(req.slave_id, req.paddr, req.prdata, req.pslverr);
         end
     	//-----------------------------------------------

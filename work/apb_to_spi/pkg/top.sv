@@ -1,4 +1,5 @@
-`include "ApbIf.sv"
+`include "../If/ApbIf.sv"
+`include "../If/SpiIf.sv"
 `include "pkg.sv"
 
 module top;
@@ -16,18 +17,9 @@ end
 assign apbIf.PREADY = pready_d[3];
 
 ApbIf apbIf(clk);
-dut DUT(
-    .PCLK       (apbIf.PCLK    ),
-    .PRESETn    (apbIf.PRESETn ),
-    .PADDR      (apbIf.PADDR   ),
-    .PSELx      (apbIf.PSELx   ),  
-    .PENABLE    (apbIf.PENABLE ),
-    .PWRITE     (apbIf.PWRITE  ),
-    .PWDATA     (apbIf.PWDATA  ),
-    .PREADY     (apbIf.PREADY  ),
-    .PRDATA     (apbIf.PRDATA  ),
-    .PSLVERR    (apbIf.PSLVERR ));
+SpiIf spiIf;
 
+dut DUT(apbIf, spiIf);
 
 initial begin
     uvm_config_db#(virtual ApbIf)::set(
@@ -45,6 +37,6 @@ initial begin
 end
 
 initial forever #5 clk = ~clk;
-initial #2000 $stop();
+initial #1000 $stop();
 
 endmodule

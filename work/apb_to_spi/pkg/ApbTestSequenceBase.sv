@@ -6,7 +6,7 @@ class ApbTestSequenceBase extends uvm_sequence#(ApbItem);
         `uvm_field_int(repeat_count, UVM_DEFAULT)
     `uvm_object_utils_end
 
-    constraint C_REPEAT_COUNT { repeat_count inside { [1:8] }; }
+    constraint C_REPEAT_COUNT { repeat_count inside { [3:8] }; }
 
     function new(string name="");
         super.new(name);
@@ -18,9 +18,10 @@ class ApbTestSequenceBase extends uvm_sequence#(ApbItem);
             phase.raise_objection(this, "ApbTestSequenceBase");
 
         this.randomize();
+        this.repeat_count = 2;
 
         `CBLUE
-        `uvm_info(get_type_name(), $sformatf("repeat_count is %0d", repeat_count), UVM_DEBUG);
+        `uvm_info(get_type_name(), $sformatf("repeat_count is %0d", repeat_count), UVM_MEDIUM);
         `CEND
     endtask
 
