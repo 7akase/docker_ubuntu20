@@ -1,0 +1,110 @@
+@startuml
+
+
+participant top
+participant "<u>env0:</u>\n<u>MyEnv</u>" as env0
+participant "<u>agent0:</u>\n<u>MyAgent</u>" as agent0
+participant "<u>sequencer:</u>\n<u>ApbSequencer</u>" as sequencer
+participant "<u>driver:</u>\n<u>ApbDriver</u>" as driver
+participant apbIf
+participant dut
+participant spiIf
+participant "<u>collector:</u>\n<u>SpiCollector</u>" as collector
+participant "<u>monitor:</u>\n<u>ApbToSpiMonitor</u>" as monitor
+DataBase    log
+
+group new 
+activate env0
+env0 ->> agent0 : new
+end
+
+'-------------------------------------------------
+group build_phase
+
+agent0 ->> sequencer : create
+agent0 ->> driver    : create
+agent0 ->> collector : create
+agent0 ->> monitor   : create
+
+end
+
+'-------------------------------------------------
+group connect_phase
+agent0 ->> driver : connect to sequencer
+activate driver
+driver ->> sequencer : connect
+deactivate driver
+
+agent0 ->> driver : connect to monitor
+activate driver
+driver ->> monitor : connect
+deactivate driver
+
+driver ->> top       : set virtual IF of DRV_VIF to this.vif
+activate driver
+deactivate driver
+
+
+agent0 ->> collector : connect to monitor
+activate collector
+collector ->> monitor : connect
+collector ->> top     : set virtual IF of COL_VIF to spiCollector.vif
+
+
+deactivate collector
+
+end
+
+'-------------------------------------------------
+group run_phase
+driver ->> apbIf : reset()
+activate driver
+loop
+driver ->> sequencer : get_next_item()
+driver ->> monitor   : analysis_port.write()
+driver ->> apbIf     : write task
+activate apbIf
+apbIf  [#blue]->> dut       : HDL
+deactivate apbIf
+dut    [#blue]->> spiIf     :
+
+top    [#blue]->> collector : @(negedge vif.SS[0]  
+collector ->> spiIf  : RTL to TLM
+collector ->> apbIf     : read()
+collector ->> monitor : analysis_port.write()
+
+driver ->> sequencer : item_done()
+end
+deactivate driver
+
+loop
+collector ->> spiIf  : spiIf.slave_write()
+end
+
+
+end
+
+
+'-------------------------------------------------
+group extract_phase
+monitor ->> log : $display();
+end
+
+
+
+
+
+
+activate agent0
+
+
+activate top
+top ->> env0 : ApbIf vif = apbIf
+top ->> env0 : SpiIf vif = spiIf
+
+top ->> top : $stop()
+
+
+
+
+@enduml

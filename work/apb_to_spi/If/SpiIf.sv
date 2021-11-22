@@ -3,16 +3,25 @@ interface SpiIf #(CPOL=0, CPHA=0, SLAVES=1);
     logic              SCLK;
     logic              MISO;
     logic              MOSI;
+    logic [7:0]        addr;
+    logic [7:0]        wdata;
+    logic [7:0]        rdata;
+    logic              err;
 
     modport master(
         output SCLK,
         output SS, MOSI,
-        input  MISO
+        input  MISO,
+        output err
     );
     modport slave(
         input  SCLK,
         input  SS, MOSI,
-        output MISO
+        output MISO,
+        output addr,
+        output wdata,
+        input  rdata,
+        output err
     );
 
     // ----------------------------------------------------
@@ -66,7 +75,7 @@ interface SpiIf #(CPOL=0, CPHA=0, SLAVES=1);
 
     // ----------------------------------------------------
     // Read Operation
-    task master_read(input integer slave_id, logic [31:0] addr, output logic [31:0] value, logic err);
+    task master_read(input integer slave_id, logic [31:0] addr, output logic [31:0] value, err);
         SS[slave_id] = 1'b0;
         for(int i=7; i>=0; i--) begin
             MOSI = addr[i];

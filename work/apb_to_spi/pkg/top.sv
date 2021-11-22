@@ -22,12 +22,8 @@ SpiIf spiIf();
 dut DUT(apbIf, spiIf);
 
 initial begin
-    uvm_config_db#(virtual ApbIf)::set(
-        null,
-        "*env0*",
-        "vif",
-        apbIf
-    );
+    uvm_config_db#(virtual ApbIf)::set(null, "*env0*", "vif", apbIf );
+    uvm_config_db#(virtual SpiIf)::set(null, "*env0*", "vif", spiIf );
     run_test();
 end
 

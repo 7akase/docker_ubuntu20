@@ -10,7 +10,7 @@ class ApbDriver extends uvm_driver #(ApbItem,ApbItem);
         `uvm_info(this.get_name(), "is created.", UVM_DEBUG)
     endfunction
 
-    extern function void build_phase(uvm_phase phase);
+    extern function void connect_phase(uvm_phase phase);
     extern task run_phase(uvm_phase phase);
 endclass
 
@@ -22,7 +22,7 @@ endclass
  * See Also:
  *  ApbAgent
 */
-function void ApbDriver::build_phase(uvm_phase phase);
+function void ApbDriver::connect_phase(uvm_phase phase);
 	super.build_phase(phase);
 	if( !uvm_config_db#(DRV_VIF)::get(this, "", "vif", vif))
 		`uvm_error("NO-VIF", {"VIF error for ", get_full_name(),".vif"})

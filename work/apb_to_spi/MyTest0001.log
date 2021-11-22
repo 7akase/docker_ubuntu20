@@ -31,33 +31,30 @@ UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/s
 UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
 UVM_INFO @ 0: reporter [RNTST] Running test MyTest0001...
 UVM_INFO pkg/MyEnv.sv(7) @ 0: uvm_test_top.env0 [env0] is created.
+UVM_WARNING @ 0: uvm_test_top.env0.agent0.driver [UVM_DEPRECATED] build()/build_phase() has been called explicitly, outside of the phasing system. This usage of build is deprecated and may lead to unexpected behavior.
 UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
 ---------------------------------------------------------
 
 [1;34mUVM_INFO pkg/ApbTestSequenceBase.sv(24) @ 0: uvm_test_top.env0.agent0.sequencer@@test1 [ApbTestSequence0001] repeat_count is 2
-[0mtime 30.000000, APB transaction start. 1
-[1;31mtime 45.000000, APB transaction done.
-[0m[1;31mtime 95.000000, APB transaction done.
-[0m[1;31mtime 105.000000, APB transaction done.
-[0mtime 1120.000000, APB transaction start. 0
-[1;31mtime 1135.000000, APB transaction done.
-[0m[1;31mtime 1185.000000, APB transaction done.
-[0m[1;31mtime 1195.000000, APB transaction done.
+[0mtime 30.000000, APB transaction start. 0
+[1;31mtime 385.000000, SPI transaction done.
+[0mtime 1120.000000, APB transaction start. 1
+[1;31mtime 1475.000000, SPI transaction done.
 [0m---------------------------------------------------------
 
 UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 2210000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 input:  stimulus: ---------------------------------------------------------------------------------------
 Name                           Type      Size  Value                                   
 ---------------------------------------------------------------------------------------
-req                            ApbItem   -     @658                                    
+req                            ApbItem   -     @664                                    
   t                            real      64    30.000000                               
   rstn                         integral  1     'h1                                     
-  paddr                        integral  32    'hf82ec                                 
+  paddr                        integral  32    'h1bfe7c08                              
   slave_id                     integral  32    'h1                                     
-  pwrite                       integral  1     'h1                                     
-  pwdata                       integral  32    'hacf724ff                              
-  prdata                       integral  32    'h1e64b5e6                              
-  pslverr                      integral  1     'h0                                     
+  pwrite                       integral  1     'h0                                     
+  pwdata                       integral  32    'hcf708982                              
+  prdata                       integral  32    'hd3faa937                              
+  pslverr                      integral  1     'h1                                     
   begin_time                   time      64    30000                                   
   depth                        int       32    'd2                                     
   parent sequence (name)       string    5     test1                                   
@@ -68,56 +65,27 @@ req                            ApbItem   -     @658
 response: ----------------------------------------
 Name          Type      Size  Value     
 ----------------------------------------
-dut_response  ApbItem   -     @652      
-  t           real      64    45.000000 
-  rstn        integral  1     'hX       
-  paddr       integral  32    'hf82ec   
-  slave_id    integral  32    'h2       
-  pwrite      integral  1     'h1       
-  pwdata      integral  32    'hacf724ff
-  prdata      integral  32    'h0       
-  pslverr     integral  1     'h0       
-----------------------------------------
-
-response: ----------------------------------------
-Name          Type      Size  Value     
-----------------------------------------
-dut_response  ApbItem   -     @652      
-  t           real      64    95.000000 
-  rstn        integral  1     'hX       
-  paddr       integral  32    'hf82ec   
-  slave_id    integral  32    'h2       
-  pwrite      integral  1     'h0       
-  pwdata      integral  32    'hacf724ff
-  prdata      integral  32    'hcafe0123
-  pslverr     integral  1     'h0       
-----------------------------------------
-
-response: ----------------------------------------
-Name          Type      Size  Value     
-----------------------------------------
-dut_response  ApbItem   -     @652      
-  t           real      64    105.000000
-  rstn        integral  1     'hX       
-  paddr       integral  32    'hf82ec   
-  slave_id    integral  32    'h2       
-  pwrite      integral  1     'h0       
-  pwdata      integral  32    'hacf724ff
-  prdata      integral  32    'hcafe0123
-  pslverr     integral  1     'h0       
+dut_response  SpiItem   -     @658      
+  t           real      64    385.000000
+  addr        integral  8     'h89      
+  slave_id    integral  32    'h0       
+  write       integral  1     'hX       
+  wdata       integral  8     'h82      
+  rdata       integral  8     'hxx      
+  err         integral  1     'h0       
 ----------------------------------------
 
 stimulus: ---------------------------------------------------------------------------------------
 Name                           Type      Size  Value                                   
 ---------------------------------------------------------------------------------------
-req                            ApbItem   -     @688                                    
+req                            ApbItem   -     @694                                    
   t                            real      64    1120.000000                             
   rstn                         integral  1     'h1                                     
-  paddr                        integral  32    'h1396ba24                              
+  paddr                        integral  32    'h7c8979b0                              
   slave_id                     integral  32    'h1                                     
-  pwrite                       integral  1     'h0                                     
-  pwdata                       integral  32    'hd314c313                              
-  prdata                       integral  32    'hdc3a2c97                              
+  pwrite                       integral  1     'h1                                     
+  pwdata                       integral  32    'h3aaf80df                              
+  prdata                       integral  32    'hb6ec6ea0                              
   pslverr                      integral  1     'h0                                     
   begin_time                   time      64    1120000                                 
   depth                        int       32    'd2                                     
@@ -129,48 +97,20 @@ req                            ApbItem   -     @688
 response: -----------------------------------------
 Name          Type      Size  Value      
 -----------------------------------------
-dut_response  ApbItem   -     @652       
-  t           real      64    1135.000000
-  rstn        integral  1     'hX        
-  paddr       integral  32    'h1396ba24 
-  slave_id    integral  32    'h2        
-  pwrite      integral  1     'h1        
-  pwdata      integral  32    'hd314c313 
-  prdata      integral  32    'h0        
-  pslverr     integral  1     'h0        
------------------------------------------
-
-response: -----------------------------------------
-Name          Type      Size  Value      
------------------------------------------
-dut_response  ApbItem   -     @652       
-  t           real      64    1185.000000
-  rstn        integral  1     'hX        
-  paddr       integral  32    'h1396ba24 
-  slave_id    integral  32    'h2        
-  pwrite      integral  1     'h0        
-  pwdata      integral  32    'hd314c313 
-  prdata      integral  32    'hcafe0123 
-  pslverr     integral  1     'h0        
------------------------------------------
-
-response: -----------------------------------------
-Name          Type      Size  Value      
------------------------------------------
-dut_response  ApbItem   -     @652       
-  t           real      64    1195.000000
-  rstn        integral  1     'hX        
-  paddr       integral  32    'h1396ba24 
-  slave_id    integral  32    'h2        
-  pwrite      integral  1     'h0        
-  pwdata      integral  32    'hd314c313 
-  prdata      integral  32    'hcafe0123 
-  pslverr     integral  1     'h0        
+dut_response  SpiItem   -     @658       
+  t           real      64    1475.000000
+  addr        integral  8     'h80       
+  slave_id    integral  32    'h0        
+  write       integral  1     'hX        
+  wdata       integral  8     'hdf       
+  rdata       integral  8     'hxx       
+  err         integral  1     'h0        
 -----------------------------------------
 
 
 
 UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 2210000: reporter [UVM/REPORT/SERVER] [env0]     1
+[UVM_DEPRECATED]     1
 [UVM/RELNOTES]     1
 [UVM/COMP/NAMECHECK]     1
 [TEST_DONE]     1
@@ -180,7 +120,7 @@ UVM_INFO /proj/xbuilds/SWIP/2021.1_0402_2220/installs/lin64/Vivado/2021.1/data/s
 ** Report counts by id
 UVM_FATAL :    0
 UVM_ERROR :    0
-UVM_WARNING :    0
+UVM_WARNING :    1
 UVM_INFO :    7
 ** Report counts by severity
 
@@ -189,4 +129,4 @@ UVM_INFO :    7
 
 $finish called at time : 2210 ns : File "/tools/Xilinx/Vivado/2021.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
 exit
-INFO: [Common 17-206] Exiting xsim at Fri Nov 19 21:26:08 2021...
+INFO: [Common 17-206] Exiting xsim at Mon Nov 22 13:36:37 2021...

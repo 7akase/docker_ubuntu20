@@ -1,8 +1,9 @@
 class MyAgent extends uvm_agent;
-    ApbSequencer   sequencer;
-    ApbDriver     driver;
-    ApbCollector  collector;
-    ApbMonitor     monitor;
+    ApbSequencer     sequencer;
+    ApbDriver        driver;
+    //ApbCollector  collector;
+    SpiCollector     collector;
+    ApbToSpiMonitor  monitor;
 
     `uvm_component_utils_begin(MyAgent)
         `uvm_field_enum(uvm_active_passive_enum, is_active, UVM_DEFAULT)
@@ -23,8 +24,8 @@ function void MyAgent::build_phase(uvm_phase phase);
         sequencer = ApbSequencer::type_id::create("sequencer", this);
         driver    = ApbDriver::type_id::create("driver", this);
     end
-    collector = ApbCollector::type_id::create("collector", this);
-    monitor   = ApbMonitor::type_id::create("monitor", this);
+    collector = SpiCollector::type_id::create("collector", this);
+    monitor   = ApbToSpiMonitor::type_id::create("monitor", this);
 endfunction
 
 function void MyAgent::connect_phase(uvm_phase phase);
